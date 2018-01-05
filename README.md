@@ -22,6 +22,17 @@ to add the dissectors for Dji protocols to your Wireshark installation.
 It is possible to make a script which drops the PCap headers and converts the files
 to raw data form. But as long as there is no need, there is no script.
 
+# DLT_USER slots
+
+Each of the PCap files contain information about which communication protocol is
+used within it. Since there is no official definition of the DJI protocols within
+possible choices, the "user protocol" was used in these PCap files. There are
+several user slots available; to make the files here work, you should associate:
+
+* ```DLT_USER3``` with ```dji_p3``` to open any of Phantom 3 files
+* ```DLT_USER8``` with ```dji_mavic``` to open any of Mavic files
+* ```DLT_USER10``` with ```dji_spark``` to open any of Spark files
+
 # Related tools
 
 The files in this repository are either captured by [comm_serial2pcap.py](https://github.com/mefistotelis/phantom-firmware-tools#comm_serial2pcappy),
