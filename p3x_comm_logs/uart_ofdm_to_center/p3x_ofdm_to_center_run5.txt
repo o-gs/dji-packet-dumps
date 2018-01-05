@@ -1,0 +1,37 @@
+﻿Dji P3X UART dump (DUPC)
+
+Tap place:
+- Communication between OFDM MCU and FC throgh ribbon cable from OFDM Board to Esc Center board
+- Transmission recorded from both sides
+- Recorded with command:
+  sudo ./comm_serial2pcap.py -b 256000 -u 3 -e -vvv -w p3x_ofdm_to_center_run.pcap /dev/ttyUSB0 /dev/ttyUSB1
+
+Starting conditions:
+- Drone fully functional
+- Camera fully functional
+- Drone standing  on a flat, leveled surface
+- Drone indoors - no GPS signal
+
+Software versions:
+- Drone FW version P3X_FW_V01.05.0030
+- RC FW version C1_FW_V01.06.0000
+- m0306 version 02.04.0005
+- m0900 version 02.13.0000
+
+Scenario of the recording:
+1. RC on, tablet on
+2. Turned on the drone
+3. Waited through initialization
+4. Waited for slow blink yellow lights
+5. Turned on motors with CSC
+6. Turned off motors with throttle down
+7. Forced gimbal look right, let it return
+8. Forced gimbal look left, let it return
+9. Forced gimbal rotate right, let it return
+10. Forced gimbal rotate left, let it return
+11. Forced gimbal look up, let it return
+12. Gimbal did not return to normal - moved to look down instead
+13. Forced gimbal to facing front, gimbal returned to down
+14. Moved gimbal to facing front using RC
+15. Moved gimbal between front and down a few more times
+16. Turned off the drone with battery button

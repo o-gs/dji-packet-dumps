@@ -1,0 +1,26 @@
+﻿Dji P3X UART dump (DUPC)
+
+Tap place:
+- Communication between OFDM MCU and FC throgh ribbon cable from OFDM Board to Esc Center board
+- Transmission recorded from both sides
+- Recorded with command:
+  sudo ./comm_serial2pcap.py -b 256000 -u 3 -e -vvv -w p3x_ofdm_to_center_run.pcap /dev/ttyUSB0 /dev/ttyUSB1
+
+Starting conditions:
+- Drone fully functional
+- Camera fully functional
+- Drone standing  on a flat, leveled surface
+- Drone indoors - no GPS signal
+
+Software versions:
+- Drone FW version P3X_FW_V01.05.0030
+- RC FW version C1_FW_V01.06.0000
+- m0306 version 02.04.0005
+- m0900 version 02.13.0000
+
+Scenario of the recording:
+1. RC on, tablet on
+2. Turned on the drone
+3. Waited through initialization
+4. Waited a few seconds after slow blink yellow lights
+5. Turned off the drone with battery button
